@@ -16,11 +16,11 @@ public class MainJFrame extends JFrame {
 
         /*
         ====================================================================================
-        ===================================ä¸»é¡µé¢è®¾è®¡========================================
+        ===================================Ö÷Ò³ÃæÉè¼Æ========================================
         ====================================================================================
          */
 
-        super("å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ");
+        super("Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³");
 
         setSize(600 , 500);
         setLocationRelativeTo(null);
@@ -34,56 +34,56 @@ public class MainJFrame extends JFrame {
         add(loginPanel , "login");
         add(indexPanel , "index");
 
-        JButton button = new JButton("ç¡®è®¤");
+        JButton button = new JButton("È·ÈÏ");
         button.setBounds(50 , 60 , 90 , 20);
         add(button);
 
         /*
         ====================================================================================
-        ===================================èœå•æ éƒ¨åˆ†========================================
+        ===================================²Ëµ¥À¸²¿·Ö========================================
         ====================================================================================
          */
 
-        JMenu fileMenu = new JMenu("èœå•");
-        JMenu editMenu = new JMenu("ç¼–è¾‘");
-        JMenu aboutMenu = new JMenu("å…³äº");
+        JMenu fileMenu = new JMenu("²Ëµ¥");
+        JMenu editMenu = new JMenu("±à¼­");
+        JMenu aboutMenu = new JMenu("¹ØÓÚ");
 
-        //è®¾ç½®èœå•é¡¹
-        JMenuItem menuOpen = new JMenuItem("æ‰“å¼€æ–‡ä»¶");
-        JMenuItem menuSave = new JMenuItem("ä¿å­˜æ–‡ä»¶");
-        JMenuItem menuSaveAs = new JMenuItem("æ–‡ä»¶å¦å­˜ä¸º");
-        JMenuItem menuClose = new JMenuItem("å…³é—­");
+        //ÉèÖÃ²Ëµ¥Ïî
+        JMenuItem menuOpen = new JMenuItem("´ò¿ªÎÄ¼ş");
+        JMenuItem menuSave = new JMenuItem("±£´æÎÄ¼ş");
+        JMenuItem menuSaveAs = new JMenuItem("ÎÄ¼şÁí´æÎª");
+        JMenuItem menuClose = new JMenuItem("¹Ø±Õ");
 
-        //å°†menuOpen.menuSave.menuSaveAs.menuCloseèœå•é¡¹åŠ å…¥åˆ°fileMenuèœå•é‡Œé¢
+        //½«menuOpen.menuSave.menuSaveAs.menuClose²Ëµ¥Ïî¼ÓÈëµ½fileMenu²Ëµ¥ÀïÃæ
         fileMenu.add(menuOpen);
         fileMenu.add(menuSave);
         fileMenu.add(menuSaveAs);
         fileMenu.add(menuClose);
 
-        JMenuItem menuCut = new JMenuItem("å‰ªåˆ‡");
-        JMenuItem menuCopy = new JMenuItem("å¤åˆ¶");
-        JMenuItem menuPaste = new JMenuItem("ç²˜è´´");
+        JMenuItem menuCut = new JMenuItem("¼ôÇĞ");
+        JMenuItem menuCopy = new JMenuItem("¸´ÖÆ");
+        JMenuItem menuPaste = new JMenuItem("Õ³Ìù");
 
         editMenu.add(menuCut);
         editMenu.add(menuCopy);
         editMenu.add(menuPaste);
 
-        JMenuItem menuAbout = new JMenuItem("å…³äºæœ¬è½¯ä»¶");
+        JMenuItem menuAbout = new JMenuItem("¹ØÓÚ±¾Èí¼ş");
 
         aboutMenu.add(menuAbout);
 
-        //åˆ›å»ºèœå•æ å¯¹è±¡
+        //´´½¨²Ëµ¥À¸¶ÔÏó
         JMenuBar menuBar = new JMenuBar();
         menuBar.add(fileMenu);
         menuBar.add(editMenu);
         menuBar.add(aboutMenu);
 
-        //å°†menuBarè®¾ç½®åœ¨çª—å£ä¸Šé¢
+        //½«menuBarÉèÖÃÔÚ´°¿ÚÉÏÃæ
         setJMenuBar(menuBar);
 
         /*
         ====================================================================================
-        ================================èœå•æ çš„å•å‡»äº‹ä»¶=====================================
+        ================================²Ëµ¥À¸µÄµ¥»÷ÊÂ¼ş=====================================
         ====================================================================================
          */
 

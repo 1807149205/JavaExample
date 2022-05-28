@@ -9,15 +9,15 @@ public class LoginPanel extends JPanel {
 
         setLayout(null);
 
-        JLabel title = new JLabel("æ¬¢è¿æ¥åˆ°å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ");
+        JLabel title = new JLabel("»¶Ó­À´µ½Ñ§ÉúĞÅÏ¢¹ÜÀíÒ³Ãæ");
         JTextField text1 = new JTextField();
         JPasswordField text2 = new JPasswordField();
-        JLabel area1 = new JLabel("ç”¨æˆ·å");
-        JLabel area2 = new JLabel("å¯†ç ");
-        JButton button = new JButton("ç™»å½•");
+        JLabel area1 = new JLabel("ÓÃ»§Ãû");
+        JLabel area2 = new JLabel("ÃÜÂë");
+        JButton button = new JButton("µÇÂ¼");
 
         title.setBounds(100 , 0 , 500 , 100);
-        title.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 35));
+        title.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 35));
 
         text1.setBounds(200 , 140 , 250 , 30);
         text2.setBounds(200 , 200 , 250 , 30);

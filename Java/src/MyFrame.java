@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame {
     JPanel panel1 = new JPanel(new FlowLayout());
@@ -13,39 +11,39 @@ public class MyFrame extends JFrame {
         super(title);
         setBounds(100, 100, 500, 400);
 
-        //å†…å®¹é¢æ¿
+        //ÄÚÈİÃæ°å
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
         add(panel);
 
-        //è®¾ç½®ç»„ä»¶å±æ€§
-        comboBox.addItem("ç¬¬ä¸€ä¸ªé¢æ¿");
-        comboBox.addItem("ç¬¬äºŒä¸ªé¢æ¿");
+        //ÉèÖÃ×é¼şÊôĞÔ
+        comboBox.addItem("µÚÒ»¸öÃæ°å");
+        comboBox.addItem("µÚ¶ş¸öÃæ°å");
         comboBox.addActionListener(e -> {
             CardLayout cardLayout = (CardLayout) panel.getLayout();
             int index = comboBox.getSelectedIndex();
             if(index == 0){
-                cardLayout.show(panel, "ç¬¬ä¸€ä¸ªé¢æ¿");
+                cardLayout.show(panel, "µÚÒ»¸öÃæ°å");
             }else if(index == 1) {
-                cardLayout.show(panel, "ç¬¬äºŒä¸ªé¢æ¿");
+                cardLayout.show(panel, "µÚ¶ş¸öÃæ°å");
             }
         });
 
-        //æ·»åŠ å¡ç‰‡ä¸­çš„ç»„ä»¶
-        panel1.add(new JButton("é¾™å“²"));
-        panel1.add(new JButton("é™†é€šä¿Š"));
-        panel1.add(new JButton("éŸ©å†²"));
-        panel2.add(new JLabel("è¾“å…¥"));
+        //Ìí¼Ó¿¨Æ¬ÖĞµÄ×é¼ş
+        panel1.add(new JButton("ÁúÕÜ"));
+        panel1.add(new JButton("Â½Í¨¿¡"));
+        panel1.add(new JButton("º«³å"));
+        panel2.add(new JLabel("ÊäÈë"));
         panel2.add(new JTextField(16));
 
-        //æ·»åŠ ç»„ä»¶
+        //Ìí¼Ó×é¼ş
         contentPane.add(comboBox,BorderLayout.PAGE_START);
         contentPane.add(panel, BorderLayout.CENTER);
-        panel.add(panel1,"ç¬¬ä¸€ä¸ªé¢æ¿");
-        panel.add(panel2,"ç¬¬äºŒä¸ªé¢æ¿");
+        panel.add(panel1,"µÚÒ»¸öÃæ°å");
+        panel.add(panel2,"µÚ¶ş¸öÃæ°å");
 
-        //è®¾ç½®çª—å£å¯è§
+        //ÉèÖÃ´°¿Ú¿É¼û
         setVisible(true);
     }
 
@@ -53,7 +51,7 @@ public class MyFrame extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new MyFrame("æµ‹è¯•");
+                new MyFrame("²âÊÔ");
             }
         });
     }

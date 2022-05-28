@@ -6,7 +6,7 @@ public class IndexPanel extends JPanel {
 
     public IndexPanel() {
 
-        JTextArea jTextArea = new JTextArea("æˆ‘æ˜¯IndexPanelé¡µé¢");
+        JTextArea jTextArea = new JTextArea("ÎÒÊÇIndexPanelÒ³Ãæ");
         jTextArea.setSize(100 , 50);
 
         this.add(jTextArea);
