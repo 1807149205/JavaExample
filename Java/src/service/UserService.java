@@ -1,35 +1,16 @@
 package service;
 
-import utils.JDBC;
+import java.util.Vector;
 
-import java.util.List;
-import java.util.Map;
-
-public class UserService {
+public interface UserService {
 
     //登录判断用户名和密码是否正确
-    public boolean loginCheck(String username , String password) {
-
-
-        String sql = "SELECT * FROM user";
-        List<Map<String, String>> list = JDBC.queryForListMap(sql);
-        for (Map<String , String> map : list) {
-            if(map.get("username").equals(username) && map.get("password").equals(password)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    boolean loginCheck(String username , String password);
 
     //通过用户名和密码判断用户的属性
-    public String getType(String username , String password) {
-        String sql = "SELECT type FROM user WHERE username = '"+username+"' AND password = '"+password+"'";
-        List<Map<String, String>> list = JDBC.queryForListMap(sql);
-        return list.get(0).get("type");
-    }
+    String getType(String username , String password);
 
-    public static void main(String[] args) {
-        System.out.println(new UserService().getType("admin" , "456"));
-    }
+    //获取全部的用户信息
+    Vector<Vector<Object>> getAllUser();
 
 }

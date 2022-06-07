@@ -1,6 +1,6 @@
 
 
-import client.MainJFrame;
+import view.MainJFrame;
 
 import javax.swing.*;
 

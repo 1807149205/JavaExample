@@ -1,4 +1,4 @@
-package utils;
+package dao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -52,7 +52,6 @@ public class JDBC {
      * 增加数据
      */
     public static void create(String sql) {
-//        String sql = "INSERT INTO USER (user_name,user_password,user_age) VALUES('老王','123456',18)";
         execute(sql);
     }
 
@@ -61,7 +60,6 @@ public class JDBC {
      * 修改数据
      */
     public static void update(String sql) {
-//        String sql = "UPDATE USER SET USER.user_name = '老李'";
         execute(sql);
     }
 

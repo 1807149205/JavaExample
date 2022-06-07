@@ -1,4 +1,4 @@
-package client.panels;
+package view.panels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +16,8 @@ public class LoginPanel extends JPanel {
         JLabel title = new JLabel("欢迎来到学生信息管理页面");
         text1 = new JTextField();
         text2 = new JPasswordField();
-        JLabel area1 = new JLabel("用户名");
-        JLabel area2 = new JLabel("密码");
+        JLabel area1 = new JLabel("姓名:");
+        JLabel area2 = new JLabel("密码:");
         button = new JButton("登录");
 
         title.setBounds(90 , 20 , 500 , 100);

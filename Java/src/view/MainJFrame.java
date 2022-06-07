@@ -1,18 +1,26 @@
-package client;
+package view;
 
-import client.panels.IndexPanel;
-import client.panels.LoginPanel;
-import service.UserService;
+import view.JFrames.AddStudent;
+import view.JFrames.DeleteStudent;
+import view.JFrames.SearchStudent;
+import view.panels.IndexPanel;
+import view.panels.LoginPanel;
+import service.Impl.UserServiceImpl;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class MainJFrame extends JFrame {
 
     CardLayout cardLayout;
+    JFileChooser jFileChooser;
     LoginPanel loginPanel = new LoginPanel();
     IndexPanel indexPanel = new IndexPanel();
-    UserService userService = new UserService();
+    UserServiceImpl userServiceImpl = new UserServiceImpl();
+    AddStudent addStudent = new AddStudent();
+    SearchStudent searchStudent = new SearchStudent();
+    DeleteStudent deleteStudent = new DeleteStudent();
 
     public MainJFrame() {
 
@@ -26,8 +34,8 @@ public class MainJFrame extends JFrame {
 
         setSize(600 , 500);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
         cardLayout = new CardLayout();
@@ -48,13 +56,11 @@ public class MainJFrame extends JFrame {
         JMenu aboutMenu = new JMenu("关于");
 
         //设置菜单项
-        JMenuItem selectAll = new JMenuItem("查询学生的全部信息");
         JMenuItem addStu = new JMenuItem("添加学生至远程数据库");
         JMenuItem search = new JMenuItem("模糊查找一位学生");
         JMenuItem deleteStu = new JMenuItem("删除一位学生");
 
         //将menuOpen.menuSave.menuSaveAs.menuClose菜单项加入到fileMenu菜单里面
-        fileMenu.add(selectAll);
         fileMenu.add(addStu);
         fileMenu.add(search);
         fileMenu.add(deleteStu);
@@ -84,30 +90,44 @@ public class MainJFrame extends JFrame {
         ====================================================================================
          */
 
-//        menuOpen.addActionListener(e -> {
-//            cardLayout.show(this.getContentPane() , "login");
-//        });
-//
-//        menuSave.addActionListener(e -> {
-//            cardLayout.show(this.getContentPane() , "index");
-//        });
+        menuAbout.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null , "Java期末大作业\n作者:卫志龙\n主题:学生管理系统，角色管理");
+        });
+
+        addStu.addActionListener(e -> {
+            addStudent.setVisible(true);
+        });
+
+        search.addActionListener(e -> {
+            searchStudent.setVisible(true);
+        });
+        deleteStu.addActionListener(e -> {
+            deleteStudent.setVisible(true);
+        });
+        getFile.addActionListener(e -> {
+            jFileChooser = new JFileChooser(".");
+            jFileChooser.showSaveDialog(this);
+            File file = jFileChooser.getSelectedFile();
+
+        });
 
 
         loginPanel.getButton().addActionListener(e -> {
             String username = loginPanel.getText1().getText();
             String password = new String(loginPanel.getText2().getPassword());
 
-            if(userService.loginCheck(username , password)) {
+            if(userServiceImpl.loginCheck(username , password)) {
                 cardLayout.show(this.getContentPane() , "index");
                 this.setSize(800 , 600);
                 setLocationRelativeTo(null);
                 menuBar.setVisible(true);
 
-                String type = userService.getType(username , password);
-                indexPanel.getJl1().setText("欢迎 " + username + type + " 登录管理登录系统");
+                String type = userServiceImpl.getType(username , password);
+                indexPanel.getJl1().setText("欢迎 " + username + type + " 登录学生管理系统");
 
                 if(!type.equals("管理员")) {
-                    indexPanel.getTabbedPane1().setEnabledAt(1 , false);
+                    indexPanel.getTabbedPane1().setEnabledAt(2 , false);
+                    fileMenu.setEnabled(false);
                 }
             } else {
                 JOptionPane.showMessageDialog(null , "登录失败，请检查用户名和密码");
