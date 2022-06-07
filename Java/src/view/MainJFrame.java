@@ -18,9 +18,9 @@ public class MainJFrame extends JFrame {
     LoginPanel loginPanel = new LoginPanel();
     IndexPanel indexPanel = new IndexPanel();
     UserServiceImpl userServiceImpl = new UserServiceImpl();
-    AddStudent addStudent = new AddStudent();
-    SearchStudent searchStudent = new SearchStudent();
-    DeleteStudent deleteStudent = new DeleteStudent();
+    AddStudent addStudent;
+    SearchStudent searchStudent;
+    DeleteStudent deleteStudent;
 
     public MainJFrame() {
 
@@ -31,6 +31,12 @@ public class MainJFrame extends JFrame {
          */
 
         super("学生信息管理系统");
+
+        SwingUtilities.invokeLater(() -> {
+            addStudent = new AddStudent();
+            searchStudent = new SearchStudent();
+            deleteStudent = new DeleteStudent();
+        });
 
         setSize(600 , 500);
         setLocationRelativeTo(null);

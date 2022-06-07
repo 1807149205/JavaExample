@@ -11,11 +11,18 @@ public class LoginPanel extends JPanel {
     JPasswordField text2;
     JButton button;
 
-    Register register = new Register();
+    Register register;
 
     public LoginPanel() {
 
         setLayout(null);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                register = new Register();
+            }
+        });
 
         JLabel title = new JLabel("学生信息管理登录页面");
         text1 = new JTextField();
