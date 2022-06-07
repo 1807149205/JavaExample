@@ -1,7 +1,7 @@
-package service;
+package service.Impl;
 
-import service.Impl.CourseService;
 import dao.JDBC;
+import service.CourseService;
 
 import java.util.List;
 import java.util.Map;

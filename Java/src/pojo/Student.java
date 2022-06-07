@@ -58,7 +58,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "{" +
                 "学号=" + id +
                 ", 学生姓名='" + stuName + '\'' +
                 ", 学生性别='" + stuSex + '\'' +

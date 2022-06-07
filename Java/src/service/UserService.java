@@ -1,5 +1,7 @@
 package service;
 
+import pojo.User;
+
 import java.util.Vector;
 
 public interface UserService {
@@ -12,5 +14,8 @@ public interface UserService {
 
     //获取全部的用户信息
     Vector<Vector<Object>> getAllUser();
+
+    //注册一个用户
+    void addUser(User user);
 
 }

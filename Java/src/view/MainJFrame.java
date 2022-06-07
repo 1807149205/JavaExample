@@ -91,7 +91,7 @@ public class MainJFrame extends JFrame {
          */
 
         menuAbout.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null , "Java期末大作业\n作者:卫志龙\n主题:学生管理系统，角色管理");
+            JOptionPane.showMessageDialog(null , "Java期末大作业\n作者:卫志龙\n主题:学生管理系统，角色权限管理系统");
         });
 
         addStu.addActionListener(e -> {
@@ -108,7 +108,7 @@ public class MainJFrame extends JFrame {
             jFileChooser = new JFileChooser(".");
             jFileChooser.showSaveDialog(this);
             File file = jFileChooser.getSelectedFile();
-
+            System.out.println(file.getAbsolutePath());
         });
 
 

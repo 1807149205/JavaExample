@@ -29,7 +29,7 @@ public class IndexPanel extends JPanel {
 
         tabbedPane1.addTab("学生总览" , studentPanel);
         tabbedPane1.addTab("学生成绩总览" , coursePanel);
-        tabbedPane1.addTab("注册账号查询(只管理员课间)" , adminPanel);
+        tabbedPane1.addTab("注册账号查询(只有管理员可见)" , adminPanel);
 
         add(tabbedPane1);
         tabbedPane1.setBounds(10 , 90 , 760 , 420);

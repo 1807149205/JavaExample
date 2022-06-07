@@ -1,5 +1,6 @@
 package service.Impl;
 
+import pojo.User;
 import service.UserService;
 import dao.JDBC;
 
@@ -40,6 +41,12 @@ public class UserServiceImpl implements UserService {
             data.add(vector);
         }
         return data;
+    }
+
+    public void addUser(User user) {
+        String sql = "INSERT INTO user (username , password , type) VALUES ('"+user.getUsername()+"' , '"+user.getPassword()+"' , '"+user.getType()+"')";
+        System.out.println(sql);
+        JDBC.create(sql);
     }
 
 }

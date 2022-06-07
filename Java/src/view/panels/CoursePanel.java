@@ -1,7 +1,7 @@
 package view.panels;
 
-import service.CourseServiceImpl;
-import service.Impl.CourseService;
+import service.Impl.CourseServiceImpl;
+import service.CourseService;
 
 import javax.swing.*;
 import java.util.Vector;

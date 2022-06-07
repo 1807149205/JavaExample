@@ -14,6 +14,12 @@ public class User {
         this.type = type;
     }
 
+    public User(String username, String password, String type) {
+        this.username = username;
+        this.password = password;
+        this.type = type;
+    }
+
     public int getId() {
         return id;
     }

@@ -1,5 +1,7 @@
 package view.panels;
 
+import view.JFrames.Register;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,27 +11,35 @@ public class LoginPanel extends JPanel {
     JPasswordField text2;
     JButton button;
 
+    Register register = new Register();
+
     public LoginPanel() {
 
         setLayout(null);
 
-        JLabel title = new JLabel("欢迎来到学生信息管理页面");
+        JLabel title = new JLabel("学生信息管理登录页面");
         text1 = new JTextField();
         text2 = new JPasswordField();
         JLabel area1 = new JLabel("姓名:");
         JLabel area2 = new JLabel("密码:");
+        area1.setFont(new Font("微软雅黑" , Font.PLAIN , 18));
+        area2.setFont(new Font("微软雅黑" , Font.PLAIN , 18));
+
         button = new JButton("登录");
 
-        title.setBounds(90 , 20 , 500 , 100);
+        title.setBounds(110 , 20 , 500 , 100);
         title.setFont(new Font("微软雅黑", Font.PLAIN, 35));
 
-        text1.setBounds(190 , 160 , 250 , 30);
-        text2.setBounds(190 , 220 , 250 , 30);
+        text1.setBounds(190 , 150 , 250 , 50);
+        text2.setBounds(190 , 210 , 250 , 50);
 
         area1.setBounds(140 , 160 , 80 , 20);
         area2.setBounds(140 , 220 , 80 , 20);
 
         button.setBounds(150 , 300 , 300 , 60);
+
+        JButton reg = new JButton("还没账号？点我注册一个");
+        reg.setBounds(400 , 400 , 180 , 30);
 
         add(text1);
         add(text2);
@@ -37,6 +47,14 @@ public class LoginPanel extends JPanel {
         add(area2);
         add(button);
         add(title);
+        add(reg);
+
+
+
+
+        reg.addActionListener(e -> {
+            register.setVisible(true);
+        });
     }
 
     public JTextField getText1() {

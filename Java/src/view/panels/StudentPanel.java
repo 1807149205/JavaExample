@@ -31,10 +31,9 @@ public class StudentPanel extends JPanel {
 
     //Ë¢ÐÂ
     public void flushTable() {
-        if(data.size() != studentServiceImpl.getAllStudent().size()) {
+        if(data.size() < studentServiceImpl.getAllStudent().size()) {
             data.add(studentServiceImpl.getAllStudent().get(studentServiceImpl.getAllStudent().size() - 1));
         }
-        System.out.println(data);
         table.repaint();
         table.updateUI();
     }
