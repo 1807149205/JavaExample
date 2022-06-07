@@ -17,13 +17,6 @@ public class LoginPanel extends JPanel {
 
         setLayout(null);
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                register = new Register();
-            }
-        });
-
         JLabel title = new JLabel("学生信息管理登录页面");
         text1 = new JTextField();
         text2 = new JPasswordField();
@@ -57,7 +50,7 @@ public class LoginPanel extends JPanel {
         add(reg);
 
 
-
+        SwingUtilities.invokeLater(() -> register = new Register());
 
         reg.addActionListener(e -> {
             register.setVisible(true);

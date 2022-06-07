@@ -20,7 +20,6 @@ public class StudentPanel extends JPanel {
         colName.add("所在系");
 
         table = new JTable(data , colName);
-        table.setSize(400 , 400);
         add(new JScrollPane(table));
 
         JButton button = new JButton("手动刷新表格");
@@ -31,8 +30,18 @@ public class StudentPanel extends JPanel {
 
     //刷新
     public void flushTable() {
+        //增加
         if(data.size() < studentServiceImpl.getAllStudent().size()) {
             data.add(studentServiceImpl.getAllStudent().get(studentServiceImpl.getAllStudent().size() - 1));
+        }
+        //减少
+        if(data.size() < studentServiceImpl.getAllStudent().size()) {
+            Vector<Vector<Object>> allStudent = studentServiceImpl.getAllStudent();
+            for (Vector<Object> objects : allStudent) {
+                if(!data.contains(objects)) {
+                    data.remove(objects);
+                }
+            }
         }
         table.repaint();
         table.updateUI();

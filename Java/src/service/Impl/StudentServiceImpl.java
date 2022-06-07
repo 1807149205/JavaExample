@@ -47,4 +47,19 @@ public class StudentServiceImpl implements StudentService {
         return students;
     }
 
+    public void updateStudent(int id , String type , String value) {
+        try {
+            String sql = "";
+            if(type.equals("出生日期")) {
+                sql = "UPDATE student SET stu_birthday = '"+value+"' WHERE id = '"+id+"'";
+            } else if(type.equals("系")) {
+                sql = "UPDATE student SET stu_dept = '"+value+"' WHERE id = '"+id+"'";
+            }
+            JDBC.update(sql);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
