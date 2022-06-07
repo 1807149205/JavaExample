@@ -16,16 +16,16 @@ public class LoginPanel extends JPanel {
         JLabel area2 = new JLabel("ÃÜÂë");
         JButton button = new JButton("µÇÂ¼");
 
-        title.setBounds(100 , 0 , 500 , 100);
+        title.setBounds(100 , 20 , 500 , 100);
         title.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 35));
 
-        text1.setBounds(200 , 140 , 250 , 30);
-        text2.setBounds(200 , 200 , 250 , 30);
+        text1.setBounds(200 , 160 , 250 , 30);
+        text2.setBounds(200 , 220 , 250 , 30);
 
-        area1.setBounds(150 , 140 , 80 , 20);
-        area2.setBounds(150 , 200 , 80 , 20);
+        area1.setBounds(150 , 160 , 80 , 20);
+        area2.setBounds(150 , 220 , 80 , 20);
 
-        button.setBounds(160 , 280 , 300 , 60);
+        button.setBounds(160 , 300 , 300 , 60);
 
         add(text1);
         add(text2);

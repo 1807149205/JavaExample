@@ -31,6 +31,7 @@ public class MainJFrame extends JFrame {
         cardLayout = new CardLayout();
 
         setLayout(cardLayout);
+        //往卡片中添加内容
         add(loginPanel , "login");
         add(indexPanel , "index");
 
@@ -80,6 +81,8 @@ public class MainJFrame extends JFrame {
 
         //将menuBar设置在窗口上面
         setJMenuBar(menuBar);
+
+        menuBar.setVisible(false);
 
         /*
         ====================================================================================
