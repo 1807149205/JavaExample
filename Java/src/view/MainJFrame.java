@@ -1,5 +1,8 @@
 package view;
 
+import dao.FileIO;
+import service.Impl.StudentServiceImpl;
+import service.StudentService;
 import view.JFrames.AddStudent;
 import view.JFrames.DeleteStudent;
 import view.JFrames.SearchStudent;
@@ -10,6 +13,7 @@ import service.Impl.UserServiceImpl;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 public class MainJFrame extends JFrame {
 
@@ -18,6 +22,8 @@ public class MainJFrame extends JFrame {
     LoginPanel loginPanel = new LoginPanel();
     IndexPanel indexPanel = new IndexPanel();
     UserServiceImpl userServiceImpl = new UserServiceImpl();
+    StudentService studentService = new StudentServiceImpl();
+    FileIO fileIO = new FileIO();
     AddStudent addStudent;
     SearchStudent searchStudent;
     DeleteStudent deleteStudent;
@@ -114,7 +120,11 @@ public class MainJFrame extends JFrame {
             jFileChooser = new JFileChooser(".");
             jFileChooser.showSaveDialog(this);
             File file = jFileChooser.getSelectedFile();
-            System.out.println(file.getAbsolutePath());
+            try {
+                fileIO.printFileInLocal(file , studentService.getAllStudentString());
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         });
 
 

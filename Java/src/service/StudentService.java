@@ -15,4 +15,8 @@ public interface StudentService {
 
     //模糊查找所有的学生
     List<Student> searchStu(String value);
+
+    String getAllStudentString();
+
+    void updateStudent(int id , String type , String value);
 }

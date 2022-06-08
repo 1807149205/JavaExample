@@ -34,9 +34,11 @@ public class SearchStudent extends JFrame {
             List<Student> students = new StudentServiceImpl().searchStu(jt1.getText());
             if(students.size() != 0) {
                 System.out.println(students);
+                StringBuilder sb = new StringBuilder();
                 for (Student student : students) {
-                    textArea.setText(student.toString() + "\n\n");
+                    sb.append(student.toString()).append("\n\n");
                 }
+                textArea.setText(sb.toString());
             } else {
                 JOptionPane.showMessageDialog(null , "查询结果为空");
             }

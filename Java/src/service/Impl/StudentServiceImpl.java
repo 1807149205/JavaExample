@@ -11,6 +11,7 @@ import java.util.Vector;
 
 public class StudentServiceImpl implements StudentService {
 
+    @Override
     public Vector<Vector<Object>> getAllStudent() {
         Vector<Vector<Object>> data = new Vector<>();
         List<Map<String, String>> list = JDBC.queryForListMap("SELECT * FROM student");
@@ -26,11 +27,13 @@ public class StudentServiceImpl implements StudentService {
         return data;
     }
 
+    @Override
     public void addStu(Student student) {
         String sql = "INSERT INTO student VALUES('"+student.getId()+"' , '"+student.getStuName()+"' , '"+student.getStuSex()+"' , '"+student.getStuBirthday()+"' , '"+student.getStuDept()+"')";
         JDBC.create(sql);
     }
 
+    @Override
     public List<Student> searchStu(String value) {
         String sql = "SELECT * FROM student WHERE stu_name like '"+value+"%'";
         List<Map<String, String>> list = JDBC.queryForListMap(sql);
@@ -47,6 +50,21 @@ public class StudentServiceImpl implements StudentService {
         return students;
     }
 
+    @Override
+    public String getAllStudentString() {
+        StringBuilder sb = new StringBuilder();
+        Vector<Vector<Object>> allStudent = this.getAllStudent();
+        sb.append("学号\t\t姓名\t\t性别\t\t出生年月\t\t所在系\r\n");
+        for (Vector<Object> obj : allStudent) {
+            for (Object o : obj) {
+                sb.append(o).append("\t\t");
+            }
+            sb.append("\r\n");
+        }
+        return sb.toString();
+    }
+
+    @Override
     public void updateStudent(int id , String type , String value) {
         try {
             String sql = "";
